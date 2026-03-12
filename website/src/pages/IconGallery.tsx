@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { ALL_ICONS } from '../icon-registry';
 
 const IconGallery = () => {
