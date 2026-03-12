@@ -17,10 +17,12 @@
     "dist"
   ],
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "vite website --open",
+    "build:lib": "vite build",
+    "build:website": "cd website && npm run build",
+    "build": "npm run build:lib && npm run build:website",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview website"
   },
   "peerDependencies": {
     "react": "^19.2.0",
@@ -40,5 +42,8 @@
     "typescript-eslint": "^8.48.0",
     "vite": "^7.3.1",
     "vite-plugin-dts": "^4.5.4"
+  },
+  "dependencies": {
+    "react-router-dom": "^7.13.1"
   }
 }
