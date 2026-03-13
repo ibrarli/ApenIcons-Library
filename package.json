@@ -1,7 +1,7 @@
 {
   "name": "apen-icons",
   "private": false,
-  "version": "1.0.6",
+  "version": "1.0.0",
   "type": "module",
   "main": "./dist/apen-icons.umd.js",
   "module": "./dist/apen-icons.es.js",
