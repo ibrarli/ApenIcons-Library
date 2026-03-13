@@ -1,0 +1,13 @@
+import IconWrapper from '../../components/IconWrapper';
+import type { IconProps } from '../../components/IconWrapper';
+
+export const ArrowUp = (props: IconProps) => (
+  <IconWrapper 
+    {...props} 
+    viewBox="0 0 22 27" 
+    fill={props.color || 'currentColor'} 
+    stroke="none"
+  >
+    <path d="M11.7988 20.9999C13.4556 20.9999 14.7988 22.3431 14.7988 23.9999C14.7987 25.6567 13.4556 26.9999 11.7988 26.9999H9.79877C8.14198 26.9999 6.79887 25.6567 6.79877 23.9999C6.79877 22.3431 8.14192 20.9999 9.79877 20.9999H11.7988ZM8.20111 1.49994C9.35582 -0.500005 12.2417 -0.499998 13.3964 1.49994L21.1913 14.9999C22.3458 16.9999 20.902 19.4999 18.5927 19.4999H3.00482C0.69552 19.4999 -0.748238 16.9999 0.406189 14.9999L8.20111 1.49994Z" />
+  </IconWrapper>
+);
