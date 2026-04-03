@@ -1,9 +1,9 @@
 import { 
-  Home, HamburgerMenu, Kebab, KebabMenu, ArrowDown, ArrowRight, ArrowUp,
+  Home, MenuHamburger, Kebab, KebabMenu, ArrowDown, ArrowRight, ArrowUp,
   Check, Star, Mail, List,
   User, UserCheck,
   Plus, Minus,
-  Dot, Triangle, Square, SquareOutline, SquareDotted,
+  Dot, Triangle, Square, SquareOutline, 
   // v1.0.2 Imports
   ArrowLeft, CircleCross, CircleMinus, CirclePlus, CircleStar,
   Cross, EmojiHappy, Eye, EyeScan, Italic,
@@ -13,113 +13,141 @@ import {
   PieChart, Refresh, Settings,                      // Data & System
   Folder, Bookmark, Clipboard,                      // Files & Productivity
   Brush, PaintRoller, Crop, Bold,                   // Design & Text
-  Bug, Bolt, Ring, LockKeyhole, LockKeyholeOpen, LockOpen,                                   // Development & Objects
-  ChevronUp,
-  ChevronRight,
-  ChevronLeft,
-  ChevronDown,
-  TriangleAlert,
-  AtSign,X,
-  EyeClosed
+  Bug, Bolt, Ring, LockKeyhole, LockKeyholeOpen, LockOpen, // Development & Objects
+  ChevronUp, ChevronRight, ChevronLeft, ChevronDown,
+  TriangleAlert, AtSign, X, EyeClosed,
+  // v1.1.2 Additions
+  Home2, HomePlus, MenuKebab, MenuMeatballs,
+  ChevronFirst, ChevronLast, Circle, CircleAlert,
+  CircleArrowDown, CircleArrowLeft, CircleArrowRight, CircleArrowUp,
+  CircleCheck, CircleChevronDown, CircleChevronLeft, CircleChevronRight,
+  CircleChevronUp, CircleLoader, CirclePower, CircleX,
+  User2, UserMinus, UserPlus, UserPen, UserX,
+  Pen, Dash, Ban, Expand, SquareDashed, SquareX,
+  TriangleDashed, TriangleX, Eye2, File, Moon2, MoonStar
 } from '../../src'; 
 
 export const ALL_ICONS = [
-  // Core & Navigation (v1.0.1)
+  // --- Navigation & Layout ---
   { name: 'Home', component: Home, tags: ['main', 'house'], version: "v1.0.1", category: "Navigation" },
-  { name: 'HamburgerMenu', component: HamburgerMenu, tags: ['nav', 'menu', 'bars'], version: "v1.0.1", category: "Navigation" },
+  { name: 'Home2', component: Home2, tags: ['main', 'house', 'modern'], version: "v1.1.2", category: "Navigation" },
+  { name: 'HomePlus', component: HomePlus, tags: ['add', 'house', 'new'], version: "v1.1.2", category: "Navigation" },
+  { name: 'MenuHamburger', component: MenuHamburger, tags: ['nav', 'menu', 'bars'], version: "v1.0.1", category: "Navigation" },
   { name: 'Kebab', component: Kebab, tags: ['dots', 'more', 'vertical'], version: "v1.0.1", category: "Navigation" },
   { name: 'KebabMenu', component: KebabMenu, tags: ['dots', 'more', 'horizontal'], version: "v1.0.1", category: "Navigation" },
+  { name: 'MenuKebab', component: MenuKebab, tags: ['dots', 'more', 'vertical'], version: "v1.1.2", category: "Navigation" },
+  { name: 'MenuMeatballs', component: MenuMeatballs, tags: ['dots', 'more', 'horizontal'], version: "v1.1.2", category: "Navigation" },
   { name: 'ArrowDown', component: ArrowDown, tags: ['direction', 'bottom'], version: "v1.0.1", category: "Navigation" },
   { name: 'ArrowRight', component: ArrowRight, tags: ['direction', 'next'], version: "v1.0.1", category: "Navigation" },
   { name: 'ArrowUp', component: ArrowUp, tags: ['direction', 'top'], version: "v1.0.1", category: "Navigation" },
-
-  // Actions & Feedback (v1.0.1)
-  { name: 'Check', component: Check, tags: ['done', 'success', 'tick'], version: "v1.0.1", category: "Actions" },
-  { name: 'Star', component: Star, tags: ['favorite', 'rating', 'score'], version: "v1.0.1", category: "Actions" },
-  { name: 'Mail', component: Mail, tags: ['email', 'envelope'], version: "v1.0.1", category: "Actions" },
-  { name: 'List', component: List, tags: ['bullets', 'tasks', 'todo'], version: "v1.0.1", category: "Actions" },
-
-  // User & Profile (v1.0.1)
-  { name: 'User', component: User, tags: ['profile', 'account', 'person'], version: "v1.0.1", category: "User" },
-  { name: 'UserCheck', component: UserCheck, tags: ['verified', 'authorized'], version: "v1.0.1", category: "User" },
-
-  // Math & Controls (v1.0.1)
-  { name: 'Plus', component: Plus, tags: ['add', 'new', 'increment'], version: "v1.0.1", category: "Math" },
-  { name: 'Minus', component: Minus, tags: ['remove', 'decrement'], version: "v1.0.1", category: "Math" },
-
-  // Geometric Shapes (v1.0.1)
-  { name: 'Dot', component: Dot, tags: ['circle', 'point'], version: "v1.0.1", category: "Shapes" },
-  { name: 'Triangle', component: Triangle, tags: ['shape', 'delta'], version: "v1.0.1", category: "Shapes" },
-  { name: 'Square', component: Square, tags: ['filled', 'box'], version: "v1.0.1", category: "Shapes" },
-  { name: 'SquareOutline', component: SquareOutline, tags: ['frame', 'border'], version: "v1.0.1", category: "Shapes" },
-  { name: 'SquareDotted', component: SquareDotted, tags: ['placeholder', 'dashed'], version: "v1.0.1", category: "Shapes" },
-
-  // v1.0.2 Additions
   { name: 'ArrowLeft', component: ArrowLeft, tags: ['direction', 'back', 'previous'], version: "v1.0.2", category: "Navigation" },
-  { name: 'CircleCross', component: CircleCross, tags: ['cancel', 'close', 'error'], version: "v1.0.2", category: "Actions" },
-  { name: 'CircleMinus', component: CircleMinus, tags: ['remove', 'decrement', 'circle'], version: "v1.0.2", category: "Math" },
-  { name: 'CirclePlus', component: CirclePlus, tags: ['add', 'increment', 'circle'], version: "v1.0.2", category: "Math" },
-  { name: 'CircleStar', component: CircleStar, tags: ['favorite', 'rating', 'circle'], version: "v1.0.2", category: "Actions" },
-  { name: 'Cross', component: Cross, tags: ['close', 'delete', 'remove'], version: "v1.0.2", category: "Actions" },
-  { name: 'EmojiHappy', component: EmojiHappy, tags: ['smile', 'face', 'success'], version: "v1.0.2", category: "Actions" },
-  { name: 'Eye', component: Eye, tags: ['view', 'show', 'visibility'], version: "v1.1.0", category: "Actions" },
-  { name: 'EyeScan', component: EyeScan, tags: ['security', 'biometric', 'scan'], version: "v1.0.2", category: "Security" },
-  { name: 'Italic', component: Italic, tags: ['text', 'style', 'editor'], version: "v1.0.2", category: "Design" },
-  { name: 'Joystick', component: Joystick, tags: ['game', 'directional', 'input'], version: "v1.0.2", category: "Hardware" },
-  { name: 'Joystick2', component: Joystick2, tags: ['game', 'controller', 'analog'], version: "v1.0.2", category: "Hardware" },
-  { name: 'Lock', component: Lock, tags: ['security', 'private', 'closed'], version: "v1.0.2", category: "Security" },
-  { name: 'Mails', component: Mails, tags: ['inbox', 'stack', 'messages'], version: "v1.0.2", category: "Actions" },
-  { name: 'MapPin', component: MapPin, tags: ['location', 'marker', 'address'], version: "v1.0.2", category: "Navigation" },
-  { name: 'Moon', component: Moon, tags: ['dark-mode', 'night', 'crescent'], version: "v1.0.2", category: "Design" },
-  { name: 'Scan', component: Scan, tags: ['camera', 'frame', 'qr'], version: "v1.0.2", category: "Security" },
-  { name: 'ScanSearch', component: ScanSearch, tags: ['visual-search', 'ai', 'camera'], version: "v1.0.2", category: "Security" },
-  { name: 'Search', component: Search, tags: ['find', 'lookup', 'magnifier'], version: "v1.0.2", category: "Actions" },
-  { name: 'Sun', component: Sun, tags: ['light-mode', 'day', 'weather'], version: "v1.0.2", category: "Design" },
-
-  // Media & Hardware (v1.0.3)
-  { name: 'Hd', component: Hd, tags: ['video', 'quality', 'high-definition'], version: "v1.0.3", category: "Media" },
-  { name: 'Mic', component: Mic, tags: ['audio', 'record', 'voice', 'microphone'], version: "v1.0.3", category: "Hardware" },
-  { name: 'Monitor', component: Monitor, tags: ['screen', 'display', 'computer', 'desktop'], version: "v1.0.3", category: "Hardware" },
-  { name: 'Pause', component: Pause, tags: ['media', 'stop', 'control', 'wait'], version: "v1.0.3", category: "Media" },
-  { name: 'Play', component: Play, tags: ['media', 'start', 'control', 'action'], version: "v1.0.3", category: "Media" },
-  { name: 'Video', component: Video, tags: ['camera', 'movie', 'record', 'media'], version: "v1.0.3", category: "Media" },
-  { name: 'Wifi', component: Wifi, tags: ['network', 'internet', 'connection', 'signal'], version: "v1.0.3", category: "Hardware" },
-
-  // Data & System (v1.0.3)
-  { name: 'PieChart', component: PieChart, tags: ['data', 'analytics', 'stats', 'graph'], version: "v1.0.3", category: "Data" },
-  { name: 'Refresh', component: Refresh, tags: ['reload', 'update', 'sync', 'rotate'], version: "v1.0.3", category: "Actions" },
-  { name: 'Settings', component: Settings, tags: ['config', 'options', 'gear', 'preferences'], version: "v1.0.3", category: "Data" },
-
-  // Files & Productivity (v1.0.3)
-  { name: 'Folder', component: Folder, tags: ['directory', 'files', 'storage', 'save'], version: "v1.0.3", category: "Productivity" },
-  { name: 'Bookmark', component: Bookmark, tags: ['save', 'favorite', 'ribbon', 'read-later'], version: "v1.0.3", category: "Productivity" },
-  { name: 'Clipboard', component: Clipboard, tags: ['copy', 'paste', 'tasks', 'notes'], version: "v1.0.3", category: "Productivity" },
-
-  // Design & Editing (v1.0.3)
-  { name: 'Brush', component: Brush, tags: ['paint', 'draw', 'art', 'style'], version: "v1.0.3", category: "Design" },
-  { name: 'PaintRoller', component: PaintRoller, tags: ['fill', 'theme', 'appearance', 'color'], version: "v1.0.3", category: "Design" },
-  { name: 'Crop', component: Crop, tags: ['edit', 'image', 'resize', 'frame'], version: "v1.0.3", category: "Design" },
-  { name: 'Bold', component: Bold, tags: ['text', 'style', 'editor', 'weight'], version: "v1.0.3", category: "Design" },
-
-  // Development & Objects (v1.0.3)
-  { name: 'Bug', component: Bug, tags: ['debug', 'error', 'code', 'issue'], version: "v1.0.3", category: "Development" },
-  { name: 'Bolt', component: Bolt, tags: ['flash', 'energy', 'power', 'fast'], version: "v1.0.3", category: "Development" },
-  { name: 'Ring', component: Ring, tags: ['premium', 'jewelry', 'marriage', 'engagement'], version: "v1.0.3", category: "Objects" },
-
-
-  { name: 'LockKeyhole', component: LockKeyhole, tags: ['security', 'private', 'keyhole'], version: "v1.0.5", category: "Security" },
-  { name: 'LockOpen', component: LockOpen, tags: ['security', 'public', 'open'], version: "v1.0.5", category: "Security" },
-  { name: 'LockKeyholeOpen', component: LockKeyholeOpen, tags: ['security', 'public', 'keyhole-open'], version: "v1.0.5", category: "Security" },
-
   { name: 'ChevronDown', component: ChevronDown, tags: ['arrow', 'direction', 'down'], version: "v1.0.5", category: "Navigation" },
   { name: 'ChevronLeft', component: ChevronLeft, tags: ['arrow', 'direction', 'left'], version: "v1.0.5", category: "Navigation" },
   { name: 'ChevronRight', component: ChevronRight, tags: ['arrow', 'direction', 'right'], version: "v1.0.5", category: "Navigation" },
   { name: 'ChevronUp', component: ChevronUp, tags: ['arrow', 'direction', 'up'], version: "v1.0.5", category: "Navigation" },
+  { name: 'ChevronFirst', component: ChevronFirst, tags: ['arrow', 'skip', 'start'], version: "v1.1.2", category: "Navigation" },
+  { name: 'ChevronLast', component: ChevronLast, tags: ['arrow', 'skip', 'end'], version: "v1.1.2", category: "Navigation" },
+  { name: 'MapPin', component: MapPin, tags: ['location', 'marker', 'address'], version: "v1.0.2", category: "Navigation" },
 
-  { name: 'TriangleAlert', component: TriangleAlert, tags: ['warning', 'caution', 'alert'], version: "v1.0.7", category: "Actions" },
-  { name: 'AtSign', component: AtSign, tags: ['email', 'contact', 'social'], version: "v1.0.7", category: "Communication" },
-
+  // --- Actions & Feedback ---
+  { name: 'Check', component: Check, tags: ['done', 'success', 'tick'], version: "v1.0.1", category: "Actions" },
+  { name: 'Star', component: Star, tags: ['favorite', 'rating', 'score'], version: "v1.0.1", category: "Actions" },
+  { name: 'Pen', component: Pen, tags: ['edit', 'write', 'draw'], version: "v1.1.2", category: "Actions" },
   { name: 'X', component: X, tags: ['close', 'cancel', 'remove'], version: "v1.0.9", category: "Actions" },
-
+  { name: 'Cross', component: Cross, tags: ['close', 'delete', 'remove'], version: "v1.0.2", category: "Actions" },
+  { name: 'Plus', component: Plus, tags: ['add', 'new', 'increment'], version: "v1.0.1", category: "Actions" },
+  { name: 'Minus', component: Minus, tags: ['remove', 'decrement'], version: "v1.0.1", category: "Actions" },
+  { name: 'Dash', component: Dash, tags: ['line', 'separator', 'minus'], version: "v1.1.2", category: "Actions" },
+  { name: 'Ban', component: Ban, tags: ['forbidden', 'stop', 'restricted'], version: "v1.1.2", category: "Actions" },
+  { name: 'Expand', component: Expand, tags: ['resize', 'fullscreen', 'grow'], version: "v1.1.2", category: "Actions" },
+  { name: 'Refresh', component: Refresh, tags: ['reload', 'update', 'sync'], version: "v1.0.3", category: "Actions" },
+  { name: 'Search', component: Search, tags: ['find', 'lookup', 'magnifier'], version: "v1.0.2", category: "Actions" },
+  { name: 'Mail', component: Mail, tags: ['email', 'envelope'], version: "v1.0.1", category: "Communication" },
+  { name: 'Mails', component: Mails, tags: ['inbox', 'stack', 'messages'], version: "v1.0.2", category: "Communication" },
+  { name: 'AtSign', component: AtSign, tags: ['email', 'contact', 'social'], version: "v1.0.7", category: "Communication" },
+  { name: 'EmojiHappy', component: EmojiHappy, tags: ['smile', 'face', 'success'], version: "v1.0.2", category: "Actions" },
+  { name: 'Eye', component: Eye, tags: ['view', 'show', 'visibility'], version: "v1.1.0", category: "Actions" },
+  { name: 'Eye2', component: Eye2, tags: ['view', 'show', 'visibility', 'modern'], version: "v1.1.2", category: "Actions" },
   { name: 'EyeClosed', component: EyeClosed, tags: ['hide', 'conceal', 'invisible'], version: "v1.1.0", category: "Actions" },
+  { name: 'TriangleAlert', component: TriangleAlert, tags: ['warning', 'caution', 'alert'], version: "v1.0.7", category: "Actions" },
+
+  // --- Circle Variants ---
+  { name: 'Circle', component: Circle, tags: ['shape', 'round', 'hollow'], version: "v1.1.2", category: "Shapes" },
+  { name: 'CircleAlert', component: CircleAlert, tags: ['warning', 'caution', 'alert'], version: "v1.1.2", category: "Actions" },
+  { name: 'CircleCheck', component: CircleCheck, tags: ['success', 'done', 'tick'], version: "v1.1.2", category: "Actions" },
+  { name: 'CircleCross', component: CircleCross, tags: ['cancel', 'close', 'error'], version: "v1.0.2", category: "Actions" },
+  { name: 'CircleX', component: CircleX, tags: ['close', 'cancel', 'remove'], version: "v1.1.2", category: "Actions" },
+  { name: 'CircleMinus', component: CircleMinus, tags: ['remove', 'decrement', 'circle'], version: "v1.0.2", category: "Actions" },
+  { name: 'CirclePlus', component: CirclePlus, tags: ['add', 'increment', 'circle'], version: "v1.0.2", category: "Actions" },
+  { name: 'CircleStar', component: CircleStar, tags: ['favorite', 'rating', 'circle'], version: "v1.0.2", category: "Actions" },
+  { name: 'CirclePower', component: CirclePower, tags: ['on', 'off', 'shutdown'], version: "v1.1.2", category: "Actions" },
+  { name: 'CircleLoader', component: CircleLoader, tags: ['loading', 'wait', 'spinner'], version: "v1.1.2", category: "Actions" },
+  { name: 'CircleArrowDown', component: CircleArrowDown, tags: ['direction', 'down'], version: "v1.1.2", category: "Navigation" },
+  { name: 'CircleArrowLeft', component: CircleArrowLeft, tags: ['direction', 'left'], version: "v1.1.2", category: "Navigation" },
+  { name: 'CircleArrowRight', component: CircleArrowRight, tags: ['direction', 'right'], version: "v1.1.2", category: "Navigation" },
+  { name: 'CircleArrowUp', component: CircleArrowUp, tags: ['direction', 'up'], version: "v1.1.2", category: "Navigation" },
+  { name: 'CircleChevronDown', component: CircleChevronDown, tags: ['arrow', 'down'], version: "v1.1.2", category: "Navigation" },
+  { name: 'CircleChevronLeft', component: CircleChevronLeft, tags: ['arrow', 'left'], version: "v1.1.2", category: "Navigation" },
+  { name: 'CircleChevronRight', component: CircleChevronRight, tags: ['arrow', 'right'], version: "v1.1.2", category: "Navigation" },
+  { name: 'CircleChevronUp', component: CircleChevronUp, tags: ['arrow', 'up'], version: "v1.1.2", category: "Navigation" },
+
+  // --- User & Profile ---
+  { name: 'User', component: User, tags: ['profile', 'account', 'person'], version: "v1.0.1", category: "User" },
+  { name: 'User2', component: User2, tags: ['profile', 'account', 'modern'], version: "v1.1.2", category: "User" },
+  { name: 'UserCheck', component: UserCheck, tags: ['verified', 'authorized'], version: "v1.0.1", category: "User" },
+  { name: 'UserPlus', component: UserPlus, tags: ['add', 'invite', 'new'], version: "v1.1.2", category: "User" },
+  { name: 'UserMinus', component: UserMinus, tags: ['remove', 'delete'], version: "v1.1.2", category: "User" },
+  { name: 'UserPen', component: UserPen, tags: ['edit', 'rename', 'modify'], version: "v1.1.2", category: "User" },
+  { name: 'UserX', component: UserX, tags: ['block', 'deny', 'remove'], version: "v1.1.2", category: "User" },
+
+  // --- Shapes ---
+  { name: 'Dot', component: Dot, tags: ['circle', 'point'], version: "v1.0.1", category: "Shapes" },
+  { name: 'Triangle', component: Triangle, tags: ['shape', 'delta'], version: "v1.0.1", category: "Shapes" },
+  { name: 'TriangleDashed', component: TriangleDashed, tags: ['shape', 'placeholder', 'dashed'], version: "v1.1.2", category: "Shapes" },
+  { name: 'TriangleX', component: TriangleX, tags: ['cancel', 'remove', 'triangle'], version: "v1.1.2", category: "Shapes" },
+  { name: 'Square', component: Square, tags: ['filled', 'box'], version: "v1.0.1", category: "Shapes" },
+  { name: 'SquareOutline', component: SquareOutline, tags: ['frame', 'border'], version: "v1.0.1", category: "Shapes" },
+  { name: 'SquareDashed', component: SquareDashed, tags: ['placeholder', 'dashed'], version: "v1.1.2", category: "Shapes" },
+  { name: 'SquareX', component: SquareX, tags: ['cancel', 'remove', 'box'], version: "v1.1.2", category: "Shapes" },
+
+  // --- Design & Productivity ---
+  { name: 'File', component: File, tags: ['document', 'page', 'content'], version: "v1.1.2", category: "Productivity" },
+  { name: 'Folder', component: Folder, tags: ['directory', 'files', 'storage'], version: "v1.0.3", category: "Productivity" },
+  { name: 'Bookmark', component: Bookmark, tags: ['save', 'ribbon'], version: "v1.0.3", category: "Productivity" },
+  { name: 'Clipboard', component: Clipboard, tags: ['copy', 'paste', 'tasks'], version: "v1.0.3", category: "Productivity" },
+  { name: 'List', component: List, tags: ['bullets', 'tasks', 'todo'], version: "v1.0.1", category: "Productivity" },
+  { name: 'Brush', component: Brush, tags: ['paint', 'draw', 'style'], version: "v1.0.3", category: "Design" },
+  { name: 'PaintRoller', component: PaintRoller, tags: ['fill', 'theme', 'color'], version: "v1.0.3", category: "Design" },
+  { name: 'Crop', component: Crop, tags: ['edit', 'image', 'resize'], version: "v1.0.3", category: "Design" },
+  { name: 'Bold', component: Bold, tags: ['text', 'style', 'weight'], version: "v1.0.3", category: "Design" },
+  { name: 'Italic', component: Italic, tags: ['text', 'style', 'editor'], version: "v1.0.2", category: "Design" },
+  { name: 'Sun', component: Sun, tags: ['light-mode', 'day', 'weather'], version: "v1.0.2", category: "Design" },
+  { name: 'Moon', component: Moon, tags: ['dark-mode', 'night', 'crescent'], version: "v1.0.2", category: "Design" },
+  { name: 'Moon2', component: Moon2, tags: ['dark-mode', 'night', 'modern'], version: "v1.1.2", category: "Design" },
+  { name: 'MoonStar', component: MoonStar, tags: ['dark-mode', 'night', 'starry'], version: "v1.1.2", category: "Design" },
+
+  // --- Security & Hardware ---
+  { name: 'Lock', component: Lock, tags: ['security', 'private', 'closed'], version: "v1.0.2", category: "Security" },
+  { name: 'LockOpen', component: LockOpen, tags: ['security', 'public', 'open'], version: "v1.0.5", category: "Security" },
+  { name: 'LockKeyhole', component: LockKeyhole, tags: ['security', 'private', 'keyhole'], version: "v1.0.5", category: "Security" },
+  { name: 'LockKeyholeOpen', component: LockKeyholeOpen, tags: ['security', 'public', 'keyhole-open'], version: "v1.0.5", category: "Security" },
+  { name: 'EyeScan', component: EyeScan, tags: ['security', 'biometric', 'scan'], version: "v1.0.2", category: "Security" },
+  { name: 'Scan', component: Scan, tags: ['camera', 'frame', 'qr'], version: "v1.0.2", category: "Security" },
+  { name: 'ScanSearch', component: ScanSearch, tags: ['visual-search', 'camera'], version: "v1.0.2", category: "Security" },
+  { name: 'Mic', component: Mic, tags: ['audio', 'record', 'microphone'], version: "v1.0.3", category: "Hardware" },
+  { name: 'Monitor', component: Monitor, tags: ['screen', 'display', 'desktop'], version: "v1.0.3", category: "Hardware" },
+  { name: 'Joystick', component: Joystick, tags: ['game', 'directional'], version: "v1.0.2", category: "Hardware" },
+  { name: 'Joystick2', component: Joystick2, tags: ['game', 'controller'], version: "v1.0.2", category: "Hardware" },
+  { name: 'Wifi', component: Wifi, tags: ['network', 'internet', 'connection'], version: "v1.0.3", category: "Hardware" },
+
+  // --- Media & Data ---
+  { name: 'Play', component: Play, tags: ['media', 'start', 'action'], version: "v1.0.3", category: "Media" },
+  { name: 'Pause', component: Pause, tags: ['media', 'stop', 'wait'], version: "v1.0.3", category: "Media" },
+  { name: 'Video', component: Video, tags: ['camera', 'movie', 'media'], version: "v1.0.3", category: "Media" },
+  { name: 'Hd', component: Hd, tags: ['video', 'quality', 'definition'], version: "v1.0.3", category: "Media" },
+  { name: 'PieChart', component: PieChart, tags: ['data', 'analytics', 'graph'], version: "v1.0.3", category: "Data" },
+  { name: 'Settings', component: Settings, tags: ['config', 'gear', 'preferences'], version: "v1.0.3", category: "Data" },
+  { name: 'Bug', component: Bug, tags: ['debug', 'error', 'code'], version: "v1.0.3", category: "Development" },
+  { name: 'Bolt', component: Bolt, tags: ['flash', 'energy', 'fast'], version: "v1.0.3", category: "Development" },
+  { name: 'Ring', component: Ring, tags: ['premium', 'jewelry', 'engagement'], version: "v1.0.3", category: "Objects" },
 ];
