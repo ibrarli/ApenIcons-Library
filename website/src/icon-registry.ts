@@ -1,22 +1,18 @@
 import { 
   Home, MenuHamburger, Kebab, KebabMenu, ArrowDown, ArrowRight, ArrowUp,
-  Check, Star, Mail, List,
-  User, UserCheck,
-  Plus, Minus,
+  Check, Star, Mail, List, User, UserCheck, Plus, Minus,
   Dot, Triangle, Square, SquareOutline, 
-  // v1.0.2 Imports
   ArrowLeft, CircleCross, CircleMinus, CirclePlus, CircleStar,
   Cross, EmojiHappy, Eye, EyeScan, Italic,
   Joystick, Joystick2, Lock, Mails, MapPin,
   Moon, Scan, ScanSearch, Search, Sun,
-  Hd, Mic, Monitor, Pause, Play, Video, Wifi,        // Media & Hardware
-  PieChart, Refresh, Settings,                      // Data & System
-  Folder, Bookmark, Clipboard,                      // Files & Productivity
-  Brush, PaintRoller, Crop, Bold,                   // Design & Text
-  Bug, Bolt, Ring, LockKeyhole, LockKeyholeOpen, LockOpen, // Development & Objects
+  Hd, Mic, Monitor, Pause, Play, Video, Wifi,
+  PieChart, Refresh, Settings, 
+  Folder, Bookmark, Clipboard, 
+  Brush, PaintRoller, Crop, Bold, 
+  Bug, Bolt, Ring, LockKeyhole, LockKeyholeOpen, LockOpen, 
   ChevronUp, ChevronRight, ChevronLeft, ChevronDown,
   TriangleAlert, AtSign, X, EyeClosed,
-  // v1.1.2 Additions
   Home2, HomePlus, MenuKebab, MenuMeatballs,
   ChevronFirst, ChevronLast, Circle, CircleAlert,
   CircleArrowDown, CircleArrowLeft, CircleArrowRight, CircleArrowUp,
@@ -24,8 +20,16 @@ import {
   CircleChevronUp, CircleLoader, CirclePower, CircleX,
   User2, UserMinus, UserPlus, UserPen, UserX,
   Pen, Dash, Ban, Expand, SquareDashed, SquareX,
-  TriangleDashed, TriangleX, Eye2, File, Moon2, MoonStar
-} from '../../src'; 
+  TriangleDashed, TriangleX, Eye2, File, Moon2, MoonStar,
+  // v1.1.3 Additions
+  Calendar, Camera, VideoCamera, Trash, Sparkle, SparkleFill,
+  Smartphone, Shield, ShieldCheck, ShieldX, ShieldAlert,
+  ShieldTwo, ShieldOne, ShieldPlus, ShieldMinus, ShieldPen,
+  Share, Palette, PaletteFill, Megaphone,
+  Home2X, Home2Two, Home2One, Home2Plus, Home2Minus,
+  Home2Pen, Home2Check, Home2Alert, HeartFill, Heart,
+  Funnel, FunnelX, FunnelPlus, FunnelMinus, Clock
+} from '../../src';
 
 export const ALL_ICONS = [
   // --- Navigation & Layout ---
@@ -150,4 +154,52 @@ export const ALL_ICONS = [
   { name: 'Bug', component: Bug, tags: ['debug', 'error', 'code'], version: "v1.0.3", category: "Development" },
   { name: 'Bolt', component: Bolt, tags: ['flash', 'energy', 'fast'], version: "v1.0.3", category: "Development" },
   { name: 'Ring', component: Ring, tags: ['premium', 'jewelry', 'engagement'], version: "v1.0.3", category: "Objects" },
+
+  // --- Navigation (Home2 Variants) ---
+  { name: 'Home2', component: Home2, tags: ['main', 'house', 'modern'], version: "v1.1.3", category: "Navigation" },
+  { name: 'Home2Plus', component: Home2Plus, tags: ['add', 'house'], version: "v1.1.3", category: "Navigation" },
+  { name: 'Home2Minus', component: Home2Minus, tags: ['remove', 'house'], version: "v1.1.3", category: "Navigation" },
+  { name: 'Home2Check', component: Home2Check, tags: ['verified', 'house'], version: "v1.1.3", category: "Navigation" },
+  { name: 'Home2X', component: Home2X, tags: ['delete', 'close', 'house'], version: "v1.1.3", category: "Navigation" },
+  { name: 'Home2Pen', component: Home2Pen, tags: ['edit', 'house'], version: "v1.1.3", category: "Navigation" },
+  { name: 'Home2Alert', component: Home2Alert, tags: ['warning', 'house'], version: "v1.1.3", category: "Navigation" },
+  { name: 'Home2One', component: Home2One, tags: ['house', 'number'], version: "v1.1.3", category: "Navigation" },
+  { name: 'Home2Two', component: Home2Two, tags: ['house', 'number'], version: "v1.1.3", category: "Navigation" },
+
+  // --- Actions & Social ---
+  { name: 'Heart', component: Heart, tags: ['favorite', 'like', 'love'], version: "v1.1.3", category: "Actions" },
+  { name: 'HeartFill', component: HeartFill, tags: ['favorite', 'active', 'like'], version: "v1.1.3", category: "Actions" },
+  { name: 'Trash', component: Trash, tags: ['delete', 'remove', 'bin'], version: "v1.1.3", category: "Actions" },
+  { name: 'Share', component: Share, tags: ['export', 'send', 'external'], version: "v1.1.3", category: "Actions" },
+  { name: 'Sparkle', component: Sparkle, tags: ['ai', 'magic', 'new', 'clean'], version: "v1.1.3", category: "Actions" },
+  { name: 'SparkleFill', component: SparkleFill, tags: ['ai', 'magic', 'solid'], version: "v1.1.3", category: "Actions" },
+  { name: 'Megaphone', component: Megaphone, tags: ['broadcast', 'alert', 'marketing'], version: "v1.1.3", category: "Communication" },
+
+  // --- Filtering (Funnel Family) ---
+  { name: 'Funnel', component: Funnel, tags: ['filter', 'sort'], version: "v1.1.3", category: "Actions" },
+  { name: 'FunnelPlus', component: FunnelPlus, tags: ['filter', 'add'], version: "v1.1.3", category: "Actions" },
+  { name: 'FunnelMinus', component: FunnelMinus, tags: ['filter', 'remove'], version: "v1.1.3", category: "Actions" },
+  { name: 'FunnelX', component: FunnelX, tags: ['filter', 'clear'], version: "v1.1.3", category: "Actions" },
+
+  // --- Security (Shield Family) ---
+  { name: 'Shield', component: Shield, tags: ['security', 'safe'], version: "v1.1.3", category: "Security" },
+  { name: 'ShieldCheck', component: ShieldCheck, tags: ['verified', 'secure'], version: "v1.1.3", category: "Security" },
+  { name: 'ShieldX', component: ShieldX, tags: ['unsecured', 'blocked', 'error'], version: "v1.1.3", category: "Security" },
+  { name: 'ShieldAlert', component: ShieldAlert, tags: ['warning', 'security', 'caution'], version: "v1.1.3", category: "Security" },
+  { name: 'ShieldPlus', component: ShieldPlus, tags: ['add', 'security'], version: "v1.1.3", category: "Security" },
+  { name: 'ShieldMinus', component: ShieldMinus, tags: ['remove', 'security'], version: "v1.1.3", category: "Security" },
+  { name: 'ShieldPen', component: ShieldPen, tags: ['edit', 'policy', 'modify'], version: "v1.1.3", category: "Security" },
+  { name: 'ShieldOne', component: ShieldOne, tags: ['tier', 'rank', 'level'], version: "v1.1.3", category: "Security" },
+  { name: 'ShieldTwo', component: ShieldTwo, tags: ['tier', 'rank', 'level'], version: "v1.1.3", category: "Security" },
+
+  // --- Hardware & Design ---
+  { name: 'Smartphone', component: Smartphone, tags: ['mobile', 'device', 'phone'], version: "v1.1.3", category: "Hardware" },
+  { name: 'Camera', component: Camera, tags: ['photo', 'lens', 'photography'], version: "v1.1.3", category: "Hardware" },
+  { name: 'VideoCamera', component: VideoCamera, tags: ['movie', 'record', 'video'], version: "v1.1.3", category: "Hardware" },
+  { name: 'Palette', component: Palette, tags: ['color', 'design', 'theme', 'art'], version: "v1.1.3", category: "Design" },
+  { name: 'PaletteFill', component: PaletteFill, tags: ['color', 'active', 'theme'], version: "v1.1.3", category: "Design" },
+
+  // --- Productivity ---
+  { name: 'Calendar', component: Calendar, tags: ['date', 'schedule', 'event'], version: "v1.1.3", category: "Productivity" },
+  { name: 'Clock', component: Clock, tags: ['time', 'history', 'recent'], version: "v1.1.3", category: "Productivity" },
 ];

@@ -5,7 +5,6 @@
 
 // --- Navigation & Layout ---
 export * from './icons/v1.0.6/Home';
-export * from './icons/v1.1.2/Home2';
 export * from './icons/v1.1.2/HomePlus';
 export * from './icons/v1.1.2/MenuHamburger'; // Also referred to as MenuHamburger
 export * from './icons/v1.1.2/MenuKebab';
@@ -129,3 +128,46 @@ export * from './icons/v1.0.2/Moon';
 export * from './icons/v1.1.2/Moon2';
 export * from './icons/v1.1.2/MoonStar';
 export * from './icons/v1.0.2/EmojiHappy';
+
+
+
+export * from './icons/v1.1.3/Calendar';
+export * from './icons/v1.1.3/Camera';
+export * from './icons/v1.1.3/VideoCamera';
+export * from './icons/v1.1.3/Trash';
+export * from './icons/v1.1.3/Sparkle';
+export * from './icons/v1.1.3/SparkleFill';
+export * from './icons/v1.1.3/Smartphone';
+export * from './icons/v1.1.3/Shield';
+export * from './icons/v1.1.3/ShieldCheck';
+export * from './icons/v1.1.3/ShieldX';
+export * from './icons/v1.1.3/ShieldAlert';
+export * from './icons/v1.1.3/ShieldTwo';
+export * from './icons/v1.1.3/ShieldOne';
+export * from './icons/v1.1.3/ShieldPlus';
+export * from './icons/v1.1.3/ShieldMinus';
+export * from './icons/v1.1.3/ShieldPen';
+export * from './icons/v1.1.3/ShieldAlert';
+export * from './icons/v1.1.3/Share';
+export * from './icons/v1.1.3/Palette';
+export * from './icons/v1.1.3/PaletteFill';
+export * from './icons/v1.1.3/Megaphone';
+export * from './icons/v1.1.3/Home2X';
+export * from './icons/v1.1.3/Home2Two';
+export * from './icons/v1.1.3/Home2One';
+export * from './icons/v1.1.3/Home2Plus';
+export * from './icons/v1.1.3/Home2Minus';
+export * from './icons/v1.1.3/Home2Pen';
+export * from './icons/v1.1.3/Home2Check';
+export * from './icons/v1.1.3/Home2Alert';
+export * from './icons/v1.1.3/Home2';
+export * from './icons/v1.1.3/HeartFill';
+export * from './icons/v1.1.3/Heart';
+export * from './icons/v1.1.3/Funnel';
+export * from './icons/v1.1.3/FunnelX';
+export * from './icons/v1.1.3/FunnelPlus';
+export * from './icons/v1.1.3/FunnelMinus';
+export * from './icons/v1.1.3/Clock';
+export * from './icons/v1.1.3/Camera';
+export * from './icons/v1.1.3/Calendar';
+
