@@ -1,28 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Oxanium:wght@600;700;800&display=swap');
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   /* Fonts */
   --font-heading: 'Oxanium', cursive;
   --font-body: 'Montserrat', sans-serif;
 
-  /* Colors */
+  /* Light Mode Colors */
   --brand-primary: #E7B339;
   --brand-primary-hover: #d1a12e;
-  
+  --bg-main: #f8fafc; /* slate-50 */
+  --text-main: #0f172a; /* slate-900 */
+}
+
+/* Dark Mode Overrides */
+.dark {
+  --bg-main: #020617; /* slate-950 */
+  --text-main: #f1f5f9; /* slate-100 */
+}
+
+body {
+  margin: 0;
   font-family: var(--font-body);
+  background-color: var(--bg-main);
+  color: var(--text-main);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Smooth transition when theme changes */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1, h2, h3, h4, .logo-text {
   font-family: var(--font-heading);
   letter-spacing: -0.02em;
-}
-
-body {
-  margin: 0;
-  background-color: #f8fafc; /* slate-50 */
-  color: #0f172a; /* slate-900 */
 }
 
 /* Updated Brand Text Color */
@@ -53,6 +66,9 @@ body {
   }
 }
 
-.grid > div {
-  animation: fadeIn 0.4s ease-out forwards;
+/* Using Tailwind's @apply to keep logic clean in components */
+@layer components {
+  .grid > div {
+    animation: fadeIn 0.4s ease-out forwards;
+  }
 }

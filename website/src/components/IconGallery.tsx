@@ -25,26 +25,25 @@ const IconGallery = () => {
 
   // 3. Multi-Layer Filter Logic
   const filteredIcons = ALL_ICONS.filter((icon: any) => {
-    // Search check
     const matchesSearch =
       icon.name.toLowerCase().includes(search.toLowerCase()) ||
       icon.tags?.some((tag: string) => tag.toLowerCase().includes(search.toLowerCase()));
 
-    // Version check
     const matchesVersion = version === "All Versions" || icon.version === version;
-    
-    // Category check (using the explicit category property)
     const matchesCategory = category === "All Categories" || icon.category === category;
 
     return matchesSearch && matchesVersion && matchesCategory;
   });
 
   return (
-    <div className="p-8 max-w-full mx-auto">
+    <div className="p-8 max-w-full mx-auto transition-colors duration-300">
       <div className="mb-12 space-y-6">
         <div className="flex flex-col gap-2">
-          <h2 className="text-2xl font-bold text-slate-900 tracking-tight">Icons Library</h2>
-          <p className="text-sm text-slate-500">
+          {/* Typography Updates */}
+          <h2 className="text-2xl font-bold text-slate-900 dark:text-white tracking-tight">
+            Icons Library
+          </h2>
+          <p className="text-sm text-slate-500 dark:text-slate-400">
             {filteredIcons.length} {filteredIcons.length === 1 ? 'icon' : 'icons'} available
           </p>
         </div>
@@ -52,11 +51,13 @@ const IconGallery = () => {
         <div className="flex flex-col lg:flex-row lg:items-end gap-6">
           {/* Search Bar */}
           <div className="flex flex-col gap-1.5 flex-1">
-             <label className="text-[10px] font-bold uppercase tracking-wider text-slate-400 ml-1">Search</label>
+             <label className="text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 ml-1">
+               Search
+             </label>
              <input
                 type="text"
                 placeholder="Search across all categories..."
-                className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:ring-4 focus:ring-slate-900/5 focus:border-slate-900 outline-none transition-all text-sm shadow-sm"
+                className="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-600 focus:ring-4 focus:ring-slate-900/5 dark:focus:ring-[#E7B339]/10 focus:border-slate-900 dark:focus:border-[#E7B339] outline-none transition-all text-sm shadow-sm"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
               />
@@ -93,14 +94,14 @@ const IconGallery = () => {
           ))}
         </div>
       ) : (
-        /* Empty State */
-        <div className="py-32 text-center border-2 border-dashed border-slate-100 rounded-3xl">
-          <p className="text-slate-400 text-sm italic">
+        /* Empty State with Dark Mode Support */
+        <div className="py-32 text-center border-2 border-dashed border-slate-100 dark:border-slate-800 rounded-3xl">
+          <p className="text-slate-400 dark:text-slate-600 text-sm italic">
             No icons found matching your current filters.
           </p>
           <button 
             onClick={() => {setSearch(""); setVersion("All Versions"); setCategory("All Categories");}}
-            className="mt-4 text-xs font-semibold text-slate-900 underline underline-offset-4"
+            className="mt-4 text-xs font-semibold text-slate-900 dark:text-[#E7B339] underline underline-offset-4"
           >
             Clear all filters
           </button>

@@ -7,9 +7,36 @@
     <link rel="icon" type="image/svg+xml" href="/logo-favicon.svg" />
     
     <title>ApenIcons — Simply Beautiful Icons</title>
+
+    <!-- 1. Tailwind CDN Configuration -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class', // Enables dark: utility classes
+        theme: {
+          extend: {
+            colors: {
+              brand: '#E7B339',
+            }
+          }
+        }
+      }
+    </script>
+
+    <!-- 2. Instant Theme Detection Script -->
+    <script>
+      // This runs before the page renders to prevent "flashing"
+      if (localStorage.getItem('theme') === 'dark' || 
+          (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    </script>
   </head>
-  <body class="bg-slate-50 text-slate-900">
+
+  <!-- 3. Dynamic Body Classes -->
+  <body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
