@@ -3,40 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <link rel="icon" type="image/svg+xml" href="/logo-favicon.svg" />
-    
-    <title>ApenIcons — Simply Beautiful Icons</title>
+    <title>Apen Icons: rounded icons for React</title>
+    <meta
+      name="description"
+      content="Apen Icons by Apen Apps: 290+ rounded, consistent React icons on a 24px grid. One stroke style, tree-shakeable, made to pair with Apen UI."
+    />
+    <link rel="icon" href="/favicon-light.ico" media="(prefers-color-scheme: light)" />
+    <link rel="icon" href="/favicon-dark.ico" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f4f5f7" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0a0a" />
 
-    <!-- 1. Tailwind CDN Configuration -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        darkMode: 'class', // Enables dark: utility classes
-        theme: {
-          extend: {
-            colors: {
-              brand: '#E7B339',
-            }
-          }
-        }
-      }
-    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Quicksand:wght@500;600;700&display=swap"
+    />
 
-    <!-- 2. Instant Theme Detection Script -->
+    <!-- Apply the saved theme before first paint so there is no flash. Same logic as Apen UI. -->
     <script>
-      // This runs before the page renders to prevent "flashing"
-      if (localStorage.getItem('theme') === 'dark' || 
-          (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
+      (function () {
+        try {
+          var t = localStorage.getItem('theme');
+          var d = t === 'dark' || (!t && matchMedia('(prefers-color-scheme: dark)').matches);
+          document.documentElement.classList.toggle('dark', d);
+          document.documentElement.style.colorScheme = d ? 'dark' : 'light';
+        } catch (e) {}
+      })();
     </script>
   </head>
-
-  <!-- 3. Dynamic Body Classes -->
-  <body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300">
+  <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

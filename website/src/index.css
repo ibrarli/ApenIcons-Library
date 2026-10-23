@@ -1,74 +1,181 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Oxanium:wght@600;700;800&display=swap');
+@import "tailwindcss";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@custom-variant dark (&:where(.dark, .dark *));
 
+/* Apen theme tokens, kept in sync with apen-ui (packages/ui/src/styles/apen.css). */
 :root {
-  /* Fonts */
-  --font-heading: 'Oxanium', cursive;
-  --font-body: 'Montserrat', sans-serif;
+  --radius: 1rem;
 
-  /* Light Mode Colors */
-  --brand-primary: #E7B339;
-  --brand-primary-hover: #d1a12e;
-  --bg-main: #f8fafc; /* slate-50 */
-  --text-main: #0f172a; /* slate-900 */
+  --font-body: "Plus Jakarta Sans";
+  --font-display: "Quicksand";
+
+  --brand-orange: #f15a29;
+  --brand-blue: #00aeef;
+
+  --background: #f4f5f7;
+  --foreground: #111827;
+  --card: #ffffff;
+  --card-foreground: #111827;
+  --popover: #ffffff;
+  --popover-foreground: #111827;
+  --primary: #f15a29;
+  --primary-foreground: #ffffff;
+  --secondary: #eceef1;
+  --secondary-foreground: #111827;
+  --muted: #eef0f2;
+  --muted-foreground: #5f6368;
+  --accent: #eef0f2;
+  --accent-foreground: #111827;
+  --destructive: #e5484d;
+  --success: #16a34a;
+  --warning: #f59e0b;
+  --info: #00aeef;
+  --border: #e3e6ea;
+  --input: #d5d9de;
+  --ring: #f15a29;
+  --code: #17191c;
 }
 
-/* Dark Mode Overrides */
 .dark {
-  --bg-main: #020617; /* slate-950 */
-  --text-main: #f1f5f9; /* slate-100 */
+  --background: #0a0a0a;
+  --foreground: #ffffff;
+  --card: #171819;
+  --card-foreground: #ffffff;
+  --popover: #202123;
+  --popover-foreground: #ffffff;
+  --primary: #f26a3d;
+  --primary-foreground: #ffffff;
+  --secondary: #242527;
+  --secondary-foreground: #ffffff;
+  --muted: #222325;
+  --muted-foreground: #9aa0a6;
+  --accent: #2c2e30;
+  --accent-foreground: #ffffff;
+  --destructive: #f2555a;
+  --success: #22c55e;
+  --warning: #fbbf24;
+  --info: #33bef2;
+  --border: #2c2e30;
+  --input: #45494d;
+  --ring: #f26a3d;
+  --code: #111214;
 }
 
-body {
-  margin: 0;
-  font-family: var(--font-body);
-  background-color: var(--bg-main);
-  color: var(--text-main);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  /* Smooth transition when theme changes */
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
+@theme inline {
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-display), ui-sans-serif, system-ui, sans-serif;
 
-h1, h2, h3, h4, .logo-text {
-  font-family: var(--font-heading);
-  letter-spacing: -0.02em;
-}
+  --radius-sm: calc(var(--radius) * 0.5);
+  --radius-md: calc(var(--radius) * 0.75);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.25);
+  --radius-2xl: calc(var(--radius) * 1.5);
+  --radius-3xl: calc(var(--radius) * 2);
 
-/* Updated Brand Text Color */
-.text-brand {
-  color: var(--brand-primary);
-}
+  --shadow-soft: 0 1px 2px rgb(16 24 40 / 0.04), 0 4px 16px -4px rgb(16 24 40 / 0.08);
 
-.bg-brand {
-  background-color: var(--brand-primary);
-}
+  --color-brand-orange: var(--brand-orange);
+  --color-brand-blue: var(--brand-blue);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-info: var(--info);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-code: var(--code);
 
-/* Smooth transitions for icon cards */
-.transition-all {
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 200ms;
-}
+  --animate-fade-in: fade-in 0.2s ease-out;
+  --animate-sheet-in: sheet-in 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+  --animate-sheet-up: sheet-up 0.28s cubic-bezier(0.22, 1, 0.36, 1);
 
-/* Subtle animation when icons appear */
-@keyframes fadeIn {
-  from { 
-    opacity: 0; 
-    transform: translateY(12px); 
+  @keyframes fade-in {
+    from { opacity: 0; }
   }
-  to { 
-    opacity: 1; 
-    transform: translateY(0); 
+  @keyframes sheet-in {
+    from { opacity: 0; transform: translateX(24px); }
+  }
+  @keyframes sheet-up {
+    from { opacity: 0; transform: translateY(32px); }
   }
 }
 
-/* Using Tailwind's @apply to keep logic clean in components */
-@layer components {
-  .grid > div {
-    animation: fadeIn 0.4s ease-out forwards;
+@utility bg-brand-gradient {
+  background-image: linear-gradient(135deg, var(--brand-orange) 0%, var(--brand-blue) 100%);
+}
+
+@utility text-brand-gradient {
+  background-image: linear-gradient(135deg, var(--brand-orange) 0%, var(--brand-blue) 100%);
+  background-clip: text;
+  color: transparent;
+}
+
+/* The 24px drawing grid shown behind large previews. */
+@utility bg-icon-grid {
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--muted-foreground) 14%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--muted-foreground) 14%, transparent) 1px, transparent 1px);
+  background-position: center;
+}
+
+@utility scrollbar-soft {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--muted-foreground) 35%, transparent) transparent;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    border: 2px solid transparent;
+    border-radius: 9999px;
+    background-clip: content-box;
+    background-color: color-mix(in srgb, var(--muted-foreground) 35%, transparent);
+  }
+}
+
+@utility scrollbar-none {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply scroll-smooth scrollbar-soft;
+    scroll-padding-top: 6rem;
+  }
+  body {
+    @apply min-h-svh bg-background font-sans text-foreground antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-heading;
+  }
+  ::selection {
+    background: color-mix(in srgb, var(--brand-orange) 20%, transparent);
+  }
+  input[type="range"] {
+    accent-color: var(--primary);
   }
 }
