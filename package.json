@@ -1,8 +1,29 @@
 {
   "name": "apen-icons",
-  "private": false,
-  "version": "1.1.3",
+  "version": "1.2.0",
+  "description": "Rounded, consistent React icons on a 24px grid by Apen Apps. 290+ icons, one stroke style, fully tree-shakeable.",
+  "keywords": [
+    "icons",
+    "react",
+    "svg",
+    "icon library",
+    "react icons",
+    "apen",
+    "apen-icons",
+    "apen-ui"
+  ],
+  "author": "Apen Apps (https://www.apenapps.com)",
+  "license": "MIT",
+  "homepage": "https://github.com/ibrarli/apen-icons#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ibrarli/apen-icons.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ibrarli/apen-icons/issues"
+  },
   "type": "module",
+  "sideEffects": false,
   "main": "./dist/apen-icons.umd.js",
   "module": "./dist/apen-icons.es.js",
   "types": "./dist/index.d.ts",
@@ -11,18 +32,26 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/apen-icons.es.js",
       "require": "./dist/apen-icons.umd.js"
-    }
+    },
+    "./icons/*": "./icons/*",
+    "./meta.json": "./icons/meta.json"
   },
   "files": [
-    "dist"
+    "dist",
+    "icons"
   ],
   "scripts": {
-    "dev": "vite website --open",
-    "build:lib": "vite build",
-    "build:website": "vite build --config website/vite.config.ts",
+    "icons": "node scripts/build-icons.mjs",
+    "icons:check": "node scripts/build-icons.mjs --check",
+    "predev": "npm run icons",
+    "dev": "vite --config website/vite.config.ts",
+    "build:lib": "npm run icons && vite build",
+    "build:website": "npm run icons && vite build --config website/vite.config.ts",
     "build": "npm run build:lib && npm run build:website",
-    "lint": "eslint .",
-    "preview": "vite preview website"
+    "typecheck": "npm run icons && tsc -b",
+    "lint": "npm run icons && eslint .",
+    "preview": "vite preview --config website/vite.config.ts",
+    "prepublishOnly": "npm run build:lib"
   },
   "peerDependencies": {
     "react": "^19.0.0",
@@ -30,23 +59,21 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.0.0",
+    "@tailwindcss/vite": "^4.3.3",
     "@types/node": "^22.0.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "@vitejs/plugin-react": "^4.0.0",
-    "autoprefixer": "^10.4.0",
     "eslint": "^9.0.0",
-    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.4.0",
     "globals": "^15.0.0",
-    "postcss": "^8.4.0",
-    "tailwindcss": "^3.4.0",
-    "typescript": "~5.7.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "tailwindcss": "^4.3.3",
+    "typescript": "~5.9",
     "typescript-eslint": "^8.0.0",
     "vite": "^6.0.0",
     "vite-plugin-dts": "^4.0.0"
-  },
-  "dependencies": {
-    "react-router-dom": "^7.0.0"
   }
 }
