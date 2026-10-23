@@ -3,31 +3,34 @@ import react from '@vitejs/plugin-react';
 import dts from 'vite-plugin-dts';
 import { resolve } from 'path';
 
+// Library build. The showcase site has its own config in website/vite.config.ts.
 export default defineConfig({
   plugins: [
     react(),
-    dts({ 
+    dts({
       tsconfigPath: './tsconfig.app.json',
+      include: ['src'],
       insertTypesEntry: true,
-      rollupTypes: true, // This is highly recommended to create a single clean index.d.ts
+      rollupTypes: true,
       compilerOptions: {
-        noEmit: false, // OVERRIDE the noEmit setting here
+        noEmit: false,
       },
-    })
+    }),
   ],
   build: {
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
-      name: 'ApenIcons',
+      name: 'apenIcons',
       formats: ['es', 'umd'],
       fileName: (format) => `apen-icons.${format}.js`,
     },
     rollupOptions: {
-      external: ['react', 'react-dom'],
+      external: ['react', 'react-dom', 'react/jsx-runtime'],
       output: {
         globals: {
           react: 'React',
           'react-dom': 'ReactDOM',
+          'react/jsx-runtime': 'ReactJSXRuntime',
         },
       },
     },
